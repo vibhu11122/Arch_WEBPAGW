@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Arch Studio — Creator Marketplace & Creative Hub</title>
+  <!-- Google Fonts: Syne & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- FontAwesome Icons for modern visuals -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="#" id="nav-logo-link">THE ARCH STUDIO<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link active" id="nav-browse-link"><i class="fa-solid fa-compass"></i> Explore</a></li>
+      <li><a href="#" class="nav-link" id="nav-dash-link"><i class="fa-solid fa-chart-line"></i> Workspaces</a></li>
+      <li><a href="#join-section" class="nav-link"><i class="fa-solid fa-feather"></i> Join Network</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://forms.gle/x8iLu5Qn4sS8FwsF6" target="_blank" class="nav-cta" id="nav-apply-btn">Apply as Creative</a>
+    </div>
+  </nav>
+
+  <!-- ==================== EXPLORE VIEW ==================== -->
+  <div id="explore-view" class="app-view active">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <p class="hero-eyebrow">CREATOR ECONOMY &middot; INDIA</p>
+      <h1>Where India's top creators hire their <em>creative team.</em></h1>
+      <p class="hero-sub">The Arch Studio connects YouTubers, influencers, and brands with elite editors, designers, and writers who actually understand the modern internet.</p>
+      <div class="hero-actions">
+        <a href="#marketplace-section" class="btn-primary">Browse Talent</a>
+        <a href="#join-section" class="btn-secondary">Join the Studio</a>
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+      <div class="stat-item">
+        <span class="stat-num" id="stat-creatives-count">240+</span>
+        <span class="stat-label">Vetted Creatives</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" id="stat-hired-count">1.2K+</span>
+        <span class="stat-label">Successful Collabs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">₹1.8Cr+</span>
+        <span class="stat-label">Payouts Processed</span>
+      </div>
+    </section>
+
+    <!-- MARKETPLACE & FILTERS -->
+    <section class="section-wrap" id="marketplace-section">
+      <div class="marketplace-controls">
+        <!-- Search Bar -->
+        <div class="search-bar-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" id="search-bar" placeholder="Search creatives by name, skill, or keyword (e.g., 'Aman', 'Reel', 'Premiere Pro')..."/>
+        </div>
+
+        <!-- Filter Pills & Sorting -->
+        <div class="filters-row">
+          <div class="filters" id="filters-container">
+            <button class="filter-btn active" data-category="all">All Talents</button>
+            <button class="filter-btn" data-category="Video Editing">Video Editors</button>
+            <button class="filter-btn" data-category="Thumbnail Design">Thumbnail Artists</button>
+            <button class="filter-btn" data-category="Scriptwriting">Scriptwriters</button>
+            <button class="filter-btn" data-category="Graphic Design">Designers</button>
+            <button class="filter-btn" data-category="VFX & Animation">VFX & 3D</button>
+          </div>
+          <div>
+            <select class="sort-select" id="sort-select">
+              <option value="default">Sort: Recommended</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profiles Grid -->
+      <div class="profiles-grid" id="profiles-grid">
+        <!-- Dynamic Creative Cards injected here via app.js -->
+      </div>
+    </section>
+
+    <!-- WHY THE ARCH STUDIO (BRAND VALUES) -->
+    <section class="why-section">
+      <div class="why-wrap">
+        <p class="section-eyebrow">Why The Arch Studio</p>
+        <h2 class="section-heading">Built specifically for creators who value quality and speed.</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="why-title">Vetted Indian Talent</h3>
+            <p class="why-desc">We manually review every creative's portfolio, response times, and tech setup before letting them join our roster.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3 class="why-title">Direct Collab, Zero Markup</h3>
+            <p class="why-desc">Talk directly with your collaborators. No middlemen or heavy platform agency fees eating into your budgets.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-coins"></i></div>
+            <h3 class="why-title">Fair & Local Pricing</h3>
+            <p class="why-desc">Creatives set their own market rates. Creators pay according to clear, structured pricing plans that fit standard content budgets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS TIMELINE -->
+    <section class="how-section">
+      <p class="section-eyebrow">The Hiring Flow</p>
+      <h2 class="section-heading">How to source your creative team in three simple steps.</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Explore & Review Portfolios</h3>
+            <p class="step-desc">Filter talent by their specialty. Review their detailed profile modal to see playable videos, design galleries, and standard rates.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3 class="step-title">Send a Direct Inquiry</h3>
+            <p class="step-desc">Select a pricing plan (Basic, Standard, or Premium) or describe a custom project. The creative will receive your specs instantly in their lead workspace.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Align and Get to Work</h3>
+            <p class="step-desc">Connect directly via WhatsApp or Email (details unlocked upon dashboard approval). Review deliverables and build your content machine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN SECTION -->
+    <section class="join-section" id="join-section">
+      <div class="join-header">
+        <h2>Ready to build something iconic?</h2>
+        <p>Whether you want to offer your creative services or source specialized editing and design power, apply below to enter the network.</p>
+      </div>
+      <div class="join-columns">
+        <div class="join-col">
+          <div class="join-col-eyebrow">FOR CREATIVES & EDITORS</div>
+          <div class="join-col-title">Apply as a Creative</div>
+          <div class="join-col-desc">Get discovered by India's fastest-growing creators. Publish your custom plans and start managing projects directly.</div>
+          <a href="https://forms.gle/x8iLu5Qn4sS8FwsF6" target="_blank" class="join-btn white" id="apply-creative-banner-btn">Apply as Creative &rarr;</a>
+        </div>
+        <div class="join-col-divider"></div>
+        <div class="join-col">
+          <div class="join-col-eyebrow">FOR CONTENT CREATORS & BRANDS</div>
+          <div class="join-col-title">Sign Up as a Creator</div>
+          <div class="join-col-desc">Open a project workspace, track sent inquiries, manage creative listings, and build your content roster.</div>
+          <button class="join-btn outline" id="apply-creator-banner-btn">Create Workspace Account &rarr;</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== WORKSPACE / DASHBOARD VIEW ==================== -->
+  <div id="dashboard-view" class="app-view">
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <div class="dashboard-title-wrap">
+          <h1 class="dashboard-title"><i class="fa-solid fa-network-wired text-brand"></i> Collaborative Workspace</h1>
+          <p class="dashboard-desc" id="dashboard-subtitle">Manage project contracts, client leads, and profile discovery.</p>
+        </div>
+        <!-- Dashboard Account Switcher -->
+        <div>
+          <select class="sort-select" id="dash-account-toggle">
+            <option value="creator">Workspace Mode: Hiring Creator</option>
+            <option value="creative">Workspace Mode: Hired Creative</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+          <!-- Creator Tabs -->
+          <div class="sidebar-group" id="creator-sidebar-group">
+            <button class="dash-menu-item active" data-pane="creator-projects"><i class="fa-solid fa-list-check"></i> Sent Project Inquiries</button>
+            <button class="dash-menu-item" data-pane="creator-post"><i class="fa-solid fa-paper-plane"></i> Post New Inquiry</button>
+          </div>
+          <!-- Creative Tabs -->
+          <div class="sidebar-group" id="creative-sidebar-group" style="display: none;">
+            <button class="dash-menu-item" data-pane="creative-leads"><i class="fa-solid fa-envelope-open-text"></i> Received Leads</button>
+            <button class="dash-menu-item" data-pane="creative-profile"><i class="fa-solid fa-user-pen"></i> Edit Public Profile</button>
+          </div>
+        </aside>
+
+        <!-- Main Dashboard Content Panes -->
+        <main class="dashboard-content">
+
+          <!-- PANE: Creator Sent Inquiries -->
+          <div class="dashboard-content-pane active" id="pane-creator-projects">
+            <div class="stats-cards-grid">
+              <div class="stat-card">
+                <span class="stat-card-title">Active Inquiries</span>
+                <span class="stat-card-value" id="creator-stat-active">0</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card-title">Completed Collaborations</span>
+                <span class="stat-card-value" id="creator-stat-completed">0</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card-title">Target Budget</span>
+                <span class="stat-card-value" id="creator-stat-budget">₹0</span>
+              </div>
+            </div>
+
+            <div class="section-header" style="margin-bottom: 20px;">
+              <h3 class="section-title">Sent Inquiries & Lead Progress</h3>
+            </div>
+            
+            <div class="list-wrapper" id="creator-inquiries-list">
+              <!-- Dynamically populated creator inquiries -->
+              <div class="empty-state">
+                <div class="empty-title">No inquiries sent yet</div>
+                <div class="empty-desc">Explore the marketplace, pick a creative's profile, and send them an inquiry.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE: Creator Post New Inquiry -->
+          <div class="dashboard-content-pane" id="pane-creator-post">
+            <div class="section-header" style="margin-bottom: 20px;">
+              <h3 class="section-title">Initiate a New Inquiry</h3>
+            </div>
+            
+            <form class="hire-form-section" id="dash-creator-inquiry-form" style="border-top: none; padding-top: 0;">
+              <div class="form-group">
+                <label class="form-label">Select Creative *</label>
+                <select class="form-select" id="dash-inquiry-creative-select" required>
+                  <!-- Populated via Javascript -->
+                </select>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label">Your Brand/Channel Name *</label>
+                  <input type="text" class="form-input" id="dash-inquiry-client-name" placeholder="e.g., TechBurner, FinanceWithAman" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Contact Email *</label>
+                  <input type="email" class="form-input" id="dash-inquiry-client-email" placeholder="you@company.com" required/>
+                </div>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label">Hiring Tier / Plan *</label>
+                  <select class="form-select" id="dash-inquiry-tier" required>
+                    <option value="Basic">Basic Plan</option>
+                    <option value="Standard" selected>Standard Plan (Recommended)</option>
+                    <option value="Premium">Premium Plan</option>
+                    <option value="Custom">Custom Scope</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Deliverable Deadline *</label>
+                  <input type="date" class="form-input" id="dash-inquiry-deadline" required/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Project Details & Requirements *</label>
+                <textarea class="form-textarea" id="dash-inquiry-details" placeholder="Describe the scope of work (e.g., '10 Reels, 60s each, dynamic edits, funny zoom-ins, fast pacing, visual assets provided by us')." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Submit Project Inquiry</button>
+            </form>
+          </div>
+
+          <!-- PANE: Creative Received Leads -->
+          <div class="dashboard-content-pane" id="pane-creative-leads">
+            <div class="stats-cards-grid">
+              <div class="stat-card">
+                <span class="stat-card-title">New Inquiries</span>
+                <span class="stat-card-value" id="creative-stat-new">0</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card-title">Active Projects</span>
+                <span class="stat-card-value" id="creative-stat-active-projects">0</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card-title">Projected Income</span>
+                <span class="stat-card-value" id="creative-stat-revenue">₹0</span>
+              </div>
+            </div>
+
+            <div class="section-header" style="margin-bottom: 20px;">
+              <h3 class="section-title">Received Inquiries from Creators</h3>
+            </div>
+            
+            <div class="list-wrapper" id="creative-leads-list">
+              <!-- Dynamically populated creative leads -->
+              <div class="empty-state">
+                <div class="empty-title">No leads received yet</div>
+                <div class="empty-desc">Your profile is live on the marketplace. Creator inquiries will show up here.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE: Creative Edit Profile -->
+          <div class="dashboard-content-pane" id="pane-creative-profile">
+            <div class="section-header" style="margin-bottom: 20px;">
+              <h3 class="section-title">Configure Public Roster Profile</h3>
+            </div>
+            
+            <form id="creative-profile-edit-form" class="hire-form-section" style="border-top: none; padding-top: 0;">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-input" id="edit-profile-name" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Role Specialty *</label>
+                  <select class="form-select" id="edit-profile-role" required>
+                    <option value="Video Editing">Video Editor</option>
+                    <option value="Thumbnail Design">Thumbnail Artist</option>
+                    <option value="Scriptwriting">Scriptwriter</option>
+                    <option value="Graphic Design">Graphic Designer</option>
+                    <option value="VFX & Animation">VFX / Animator</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label">Starting Rate (INR) *</label>
+                  <input type="number" class="form-input" id="edit-profile-price" placeholder="e.g., 12000" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Availability Dot Status *</label>
+                  <select class="form-select" id="edit-profile-status" required>
+                    <option value="available">Available for Freelance</option>
+                    <option value="busy">Fully Booked / Busy</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Bio (Brief tagline about your work) *</label>
+                <textarea class="form-textarea" id="edit-profile-bio" required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Key Tags (comma separated) *</label>
+                <input type="text" class="form-input" id="edit-profile-tags" placeholder="e.g., Premiere Pro, Reel, Humor, YouTube" required/>
+              </div>
+              
+              <div class="form-group" style="margin-top: 16px;">
+                <label class="form-label" style="font-weight: 700;">3-Tier Package Pricing (INR)</label>
+                <div class="form-group-row" style="margin-top: 8px;">
+                  <div class="form-group">
+                    <label class="form-label">Basic Plan Price *</label>
+                    <input type="number" class="form-input" id="edit-plan-basic-price" required/>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Basic Plan Scope *</label>
+                    <input type="text" class="form-input" id="edit-plan-basic-desc" placeholder="e.g., 1 Video, simple cuts" required/>
+                  </div>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label class="form-label">Standard Plan Price *</label>
+                    <input type="number" class="form-input" id="edit-plan-standard-price" required/>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Standard Plan Scope *</label>
+                    <input type="text" class="form-input" id="edit-plan-standard-desc" placeholder="e.g., 3 Videos, custom graphic" required/>
+                  </div>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label class="form-label">Premium Plan Price *</label>
+                    <input type="number" class="form-input" id="edit-plan-premium-price" required/>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Premium Plan Scope *</label>
+                    <input type="text" class="form-input" id="edit-plan-premium-desc" placeholder="e.g., Monthly retainer, 10 edits" required/>
+                  </div>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn-submit">Save Public Roster Profile</button>
+            </form>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL: PROFILE DETAILED VIEW ==================== -->
+  <div class="modal-overlay" id="profile-modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="profile-modal-close">&times;</button>
+      
+      <!-- Profile Header -->
+      <div class="modal-header-profile" id="modal-profile-header">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="portfolio-tab">Portfolio Showcase</button>
+        <button class="modal-tab-btn" data-tab="pricing-tab">Services & Pricing</button>
+        <button class="modal-tab-btn" data-tab="hire-tab">Send Inquiry</button>
+      </div>
+
+      <!-- Tab Panel: Portfolio -->
+      <div class="modal-tab-pane active" id="portfolio-tab">
+        <p class="portfolio-intro" id="modal-portfolio-intro">Browse recent productions and creative work.</p>
+        <div class="portfolio-grid" id="modal-portfolio-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Tab Panel: Pricing & Plans -->
+      <div class="modal-tab-pane" id="pricing-tab">
+        <div class="pricing-grid" id="modal-pricing-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Tab Panel: Send Inquiry Form -->
+      <div class="modal-tab-pane" id="hire-tab">
+        <form class="hire-form-section" id="modal-hire-inquiry-form">
+          <div class="hire-section-title">Request collaboration with <span id="hire-target-name">Creative</span></div>
+          
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label">Your Brand Name / Channel *</label>
+              <input type="text" class="form-input" id="inquiry-brand-name" placeholder="e.g., Tanmay Bhat, Mamaearth" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Email Address *</label>
+              <input type="email" class="form-input" id="inquiry-email" placeholder="creator@gmail.com" required/>
+            </div>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label">Selected Pricing Tier *</label>
+              <select class="form-select" id="inquiry-plan-tier" required>
+                <option value="Basic">Basic Plan</option>
+                <option value="Standard" selected>Standard Plan</option>
+                <option value="Premium">Premium Plan</option>
+                <option value="Custom">Custom Scope</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target Completion Date *</label>
+              <input type="date" class="form-input" id="inquiry-deadline" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project Details / Niche & Outline *</label>
+            <textarea class="form-textarea" id="inquiry-details" placeholder="Describe the style, length, and format of content you are aiming to build..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Submit Inquiry to Creative</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL: DYNAMIC MULTI-STEP CREATIVE ONBOARDING ==================== -->
+  <div class="modal-overlay" id="onboarding-modal-overlay">
+    <div class="modal" style="max-width: 580px;">
+      <button class="modal-close" id="onboarding-modal-close">&times;</button>
+      
+      <div class="dialog-header">
+        <h2 class="dialog-title" id="onboarding-title">Apply to Join the Creative Roster</h2>
+        <p class="dialog-desc">Complete the steps below to establish your profile inside The Arch Studio.</p>
+      </div>
+
+      <!-- Steps Progress Tracker -->
+      <div class="multi-step-indicator">
+        <div class="step-dot active" id="onboard-dot-1"></div>
+        <div class="step-dot" id="onboard-dot-2"></div>
+        <div class="step-dot" id="onboard-dot-3"></div>
+      </div>
+
+      <form id="onboarding-form">
+        <!-- STEP 1: Personal Profile -->
+        <div class="form-step active" id="onboard-step-1">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" id="onboard-name" placeholder="e.g., Aman Sharma" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Primary Creative Specialty *</label>
+            <select class="form-select" id="onboard-role" required>
+              <option value="Video Editing">Video Editing (Reels, YT, Commercials)</option>
+              <option value="Thumbnail Design">Thumbnail Design (YT, High CTR layouts)</option>
+              <option value="Scriptwriting">Scriptwriting (Tech, Finance, Storytelling)</option>
+              <option value="Graphic Design">Graphic Design (Brand, Poster, Carousel)</option>
+              <option value="VFX & Animation">VFX & Animation (3D, Motion Graphics)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Direct Contact Email *</label>
+            <input type="email" class="form-input" id="onboard-email" placeholder="amansharma@gmail.com" required/>
+          </div>
+          <div class="step-actions">
+            <div></div> <!-- empty placeholder -->
+            <button type="button" class="btn-primary" id="btn-onboard-next-1">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Roster Showcase Details -->
+        <div class="form-step" id="onboard-step-2">
+          <div class="form-group">
+            <label class="form-label">One-Line Profile Bio / Specialty Tagline *</label>
+            <input type="text" class="form-input" id="onboard-bio" placeholder="e.g., Premiere Pro editor making cinematic reels for finance creators." required/>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label">Starting Price Tag (INR / month) *</label>
+              <input type="number" class="form-input" id="onboard-price" placeholder="e.g., 15000" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Key Tool / Niche Skills (comma separated) *</label>
+              <input type="text" class="form-input" id="onboard-tags" placeholder="e.g., Premiere Pro, Reel, Humor" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Portfolio Link *</label>
+            <input type="url" class="form-input" id="onboard-portfolio-url" placeholder="e.g., Behance link, YouTube channel, Drive Folder" required/>
+          </div>
+          <div class="step-actions">
+            <button type="button" class="btn-secondary" id="btn-onboard-prev-2"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <button type="button" class="btn-primary" id="btn-onboard-next-2">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Setup Packages -->
+        <div class="form-step" id="onboard-step-3">
+          <div class="form-group">
+            <label class="form-label" style="font-weight: 700;">Establish Package Tiers</label>
+            <p class="dialog-desc" style="font-size: 12px; margin-bottom: 12px;">Define your service offerings for direct creator purchasing.</p>
+          </div>
+          
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label">Basic Plan Price (INR) *</label>
+              <input type="number" class="form-input" id="onboard-basic-price" placeholder="e.g., 5000" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Basic Plan Scope *</label>
+              <input type="text" class="form-input" id="onboard-basic-desc" placeholder="e.g., 1 YouTube Video edit" required/>
+            </div>
+          </div>
+          
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label">Standard Plan Price (INR) *</label>
+              <input type="number" class="form-input" id="onboard-standard-price" placeholder="e.g., 12000" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Standard Plan Scope *</label>
+              <input type="text" class="form-input" id="onboard-standard-desc" placeholder="e.g., 3 YouTube Video edits" required/>
+            </div>
+          </div>
+          
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label">Premium Plan Price (INR) *</label>
+              <input type="number" class="form-input" id="onboard-premium-price" placeholder="e.g., 25000" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Premium Plan Scope *</label>
+              <input type="text" class="form-input" id="onboard-premium-desc" placeholder="e.g., Monthly Video Editing retainer" required/>
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn-secondary" id="btn-onboard-prev-3"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <button type="submit" class="btn-primary" style="background: var(--brand);">Submit Roster Application</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">THE ARCH STUDIO<span>.</span></span>
+    <div class="footer-contact">
+      <span class="footer-note"><a href="tel:+919811376331"><i class="fa-solid fa-phone"></i> +91 98113 76331</a></span>
+      <span class="footer-divider">&middot;</span>
+      <span class="footer-note"><a href="mailto:thearchstudio127@gmail.com"><i class="fa-solid fa-envelope"></i> thearchstudio127@gmail.com</a></span>
+      <span class="footer-divider">&middot;</span>
+      <span class="footer-note">© 2026 &bull; Made in India</span>
+    </div>
+  </footer>
+
+  <!-- Code Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
